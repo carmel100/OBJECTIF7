@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Élégance - Votre destination shopping</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #6d28d9;
+            --secondary-color: #8b5cf6;
+            --accent-color: #a78bfa;
+            --dark-color: #1e293b;
+        }
+        
+        /* Styles personnalisés pour compléter Bootstrap */
+        .bg-primary {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .text-primary {
+            color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 6rem 0;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 370px;
+            object-fit: cover;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+        }
+        
+        .social-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #cbd5e1;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Animation pour les cartes produits */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-card {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                <span class="text-primary">Élégance</span>Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Produits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Fonctionnalités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-3 mt-3 mt-lg-0">
+                    <a href="#" class="btn btn-outline-primary">Connexion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-white" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Découvrez notre collection exclusive</h1>
+                    <p class="lead mb-4">Trouvez les articles parfaits pour votre style unique. Livraison gratuite sur toutes les commandes.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#products" class="btn btn-light btn-lg px-4">Explorer maintenant</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-4">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="./images-kp/d5236b85a095d3c4388fa58129a620bf.jpg" alt="Mode" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-light" id="features">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 bg-white h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-truck text-primary fs-1 mb-3"></i>
+                            <h3 class="h5">Livraison Rapide</h3>
+                            <p class="mb-0">Livraison en 24h pour toutes les commandes passées avant 16h.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-white h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-arrow-left-right text-primary fs-1 mb-3"></i>
+                            <h3 class="h5">Retours Faciles</h3>
+                            <p class="mb-0">Retours gratuits sous 30 jours sans questions posées.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 bg-white h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="bi bi-shield-check text-primary fs-1 mb-3"></i>
+                            <h3 class="h5">Paiement Sécurisé</h3>
+                            <p class="mb-0">Transactions 100% sécurisées avec cryptage SSL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Nos Produits Phares</h2>
+                <p class="lead text-muted">Découvrez notre sélection de produits soigneusement choisis pour leur qualité et leur design.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Produit 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card h-100 animate-card" style="animation-delay: 0.1s">
+                        <img src="./images-kp//d5236b85a095d3c4388fa58129a620bf.jpg" class="card-img-top product-img" alt="Robe Élégante">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Robe Élégante</h5>
+                                <span class="badge bg-success">Nouveau</span>
+                            </div>
+                            <p class="card-text text-muted small">Robe longue en soie avec motifs floraux, parfaite pour les occasions spéciales.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">89,99 €</span>
+                                <a href="#" class="btn btn-sm btn-primary">Acheter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card h-100 animate-card" style="animation-delay: 0.2s">
+                        <img src="./images-kp/hotel_114_1000x1000.webp" class="card-img-top product-img" alt="Chaussures Classiques">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Chaussures Classiques</h5>
+                            <p class="card-text text-muted small">Chaussures en cuir véritable pour homme, confortables et élégantes.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">129,99 €</span>
+                                <a href="#" class="btn btn-sm btn-primary">Acheter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card h-100 animate-card" style="animation-delay: 0.3s">
+                        <img src="./images-kp/donna-borse-borsa-donna-orciani-posh-s-premium-in-pelle-con-tracolla-geranio-b02158pre-b-6e1e.jpg" class="card-img-top product-img" alt="Sac à Main Premium">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="card-title mb-0">Sac à Main Premium</h5>
+                                <span class="badge bg-danger">Promo</span>
+                            </div>
+                            <p class="card-text text-muted small">Sac en cuir avec compartiments multiples et fermeture sécurisée.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-primary">159,99 €</span>
+                                    <small class="text-decoration-line-through text-muted ms-2">199,99 €</small>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-primary">Acheter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produit 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card product-card h-100 animate-card" style="animation-delay: 0.4s">
+                        <img src="./images-kp/Montre-Quartz-homme-minimaliste-bracelet-bande-acier-en-maille-Noir-noir.jpg" class="card-img-top product-img" alt="Montre Minimaliste">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Montre Minimaliste</h5>
+                            <p class="card-text text-muted small">Montre-bracelet avec cadran mince et bracelet en cuir, design intemporel.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-primary">199,99 €</span>
+                                <a href="#" class="btn btn-sm btn-primary">Acheter</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary px-4">Voir tous les produits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Ce que disent nos clients</h2>
+                <p class="lead text-muted">Découvrez les témoignages de nos clients satisfaits.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text mb-4">"La qualité des produits est exceptionnelle. La livraison a été ultra rapide. Je recommande vivement cette boutique!"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="./images-kp/client1.jpeg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0">Sophie Martin</h6>
+                                    <small class="text-muted">Paris, France</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            <p class="card-text mb-4">"Service client impeccable. J'ai eu un problème avec ma commande qui a été résolu en moins de 24h. Très professionnel."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="./images-kp/client2.jpeg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0">Thomas Leroy</h6>
+                                    <small class="text-muted">Lyon, France</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-half text-warning"></i>
+                            </div>
+                            <p class="card-text mb-4">"Les produits sont magnifiques et correspondent parfaitement aux descriptions. Petit bémol sur les délais de livraison un peu longs."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="./images-kp/client3.jpeg" class="rounded-circle me-3" width="50" height="50" alt="Client">
+                                <div>
+                                    <h6 class="mb-0">Émilie Dubois</h6>
+                                    <small class="text-muted">Marseille, France</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="fw-bold mb-3">Abonnez-vous à notre newsletter</h2>
+                    <p class="mb-4">Recevez en exclusivité nos offres spéciales et nouveautés directement dans votre boîte mail.</p>
+                    <form class="row g-2 justify-content-center">
+                        <div class="col-8">
+                            <input type="email" class="form-control form-control-lg" placeholder="Votre email">
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-light btn-lg">S'abonner</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 text-white" id="contact">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="h4 mb-3"><span class="text-primary">Élégance</span>Shop</h3>
+                    <p>Notre boutique en ligne propose des articles de mode de haute qualité depuis 2010. Nous nous engageons à offrir les meilleurs produits à nos clients.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="h5 mb-3">Boutique</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Nouveautés</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Femmes</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Hommes</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Accessoires</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Soldes</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h4 class="h5 mb-3">Aide</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Livraison</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Retours</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Paiement</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="h5 mb-3">Contact</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> 123 Rue de la Mode, 75001 Paris</li>
+                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> contact@eleganceshop.com</li>
+                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +33 1 23 45 67 89</li>
+                        <li class="mb-2"><i class="bi bi-clock me-2"></i> Lun-Ven: 9h-18h</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="small mb-0">&copy; 2023 ÉléganceShop. Tous droits réservés.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="small mb-0">
+                        <a href="#" class="text-white text-decoration-none">Mentions légales</a> | 
+                        <a href="#" class="text-white text-decoration-none">CGV</a> | 
+                        <a href="#" class="text-white text-decoration-none">Politique de confidentialité</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.visibility = 'visible';
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(el => {
+                el.style.visibility = 'hidden';
+                observer.observe(el);
+            });
+            
+            // Tooltip activation
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>

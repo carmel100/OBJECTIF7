@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Liter&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+ body{
+    font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+ }
+
+.NavBar{
+    display: flex;
+    padding-block: 15px;
+    align-items: center;
+    box-shadow: 1px 1px 1px 1px #00000033;
+}
+
+.logo{
+    font-size:25px ;
+    font-weight: bold;
+    padding-inline-start: 20px;
+}
+
+.NavBar-child {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 20px;
+  
+}
+
+.comic{
+    text-decoration: none;
+    padding-inline: 10px;
+    padding-block: 8px;
+    border-radius: 8px;
+}
+
+
+
+.ost:hover .comic{
+    background: #0d6efd;
+    color: white;
+}
+
+.img-top {
+    width: 286px;
+    height: 281.5px;
+    border-start-start-radius: 10px;
+    border-start-end-radius: 10px;
+}
+ 
+.mood{
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: 120px;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mood1{
+    border: 2px solid #00000017;
+    border-radius: 12px;
+}
+
+.mood2{
+    width: 286px;
+    padding-inline: 10px;
+}
+
+.muni{
+    font-size: 23px;
+}
+
+.muni1{
+    font-size: 18px;
+    padding-block: 5px;
+}
+
+.btn-1{
+    background-color: #0d6efd;
+    color: white;
+    padding-inline: 12px;
+    padding-block: 8px;
+    border-radius: 8px;
+    font-size: 15px;
+   border-color: transparent;
+}
+.mool{
+    padding-block-end: 10px;
+}
+
+.btn-1:hover{
+
+    color: #0d6efd;
+    background-color: transparent;
+    border: 1px solid #0d6efd;
+}
